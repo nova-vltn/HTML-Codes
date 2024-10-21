@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <title>2D and 3D Elements</title>
+        <style>
+            body {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+            }
+    
+            /*2D*/
+            .shape1 {
+                width: 500px;
+                height: 500;
+                background: rgb(34,195,158);
+                background: radial-gradient(circle, rgba(34,195,158,1) 0%, rgba(45,210,253,1) 100%);
+                transform: rotate(45deg);
+                transition: transform 0.5s ease-in-out;
+            }
+    
+            .shape1:hover { 
+                transform: rotate(360deg);
+            }
+    
+            /*3D*/
+            .shape2 {
+                perspective: 1000px;
+            }
+    
+            .shape2 {
+                width: 300px;
+                height: 300px;
+                position: relative;
+                transform-style: preserve-3d;
+                transform: rotateX(45deg) rotateY(45deg);
+                transition: transform 0.5s ease-in-out;
+            }
+    
+            .face {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: rgb(241,237,114);
+                background: radial-gradient(circle, rgba(241,237,114,1) 58%, rgba(255,179,117,1) 96%);
+            }
+    
+            .shape2:hover {
+                transform: rotateX(180deg) rotateY(360deg);
+            }
+
+            h1 {
+                color: #333;
+                font-family: 'Lucida Sans',sans-serif;
+            }
+        </style>
+
+    </head>
+    <body>
+    
+        <div class="shape1">
+            <h1><i><b><center>2D</center></b></i></h1>
+        </div>
+    
+        <div class="shape2">
+            
+            <div class="shape2">    
+                <h1><i><b><center>3D</center></b></i></h1>
+                <div class="face"></div>
+            <div class="face" style="transform: rotateY(180deg) translateZ(50px);"></div>
+            <div class="face" style="transform: rotateY(360deg) translateZ(50px);"></div>
+            <div class="face" style="transform: rotateY(-180deg) translateZ(50px);"></div>
+            <div class="face" style="transform: rotateX(180deg) translateZ(50px);"></div>
+            <div class="face" style="transform: rotateX(-180deg) translateZ(50px);"></div>
+        </div>''
+        </div>
+    </body>
+</html>
